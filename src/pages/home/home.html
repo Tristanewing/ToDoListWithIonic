@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title text-center>
+            Todo Task
+        </ion-title>
+        <ion-buttons end>
+        <button>
+            <ion-icon name="add-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngIf="tasks.legnth">
+            No Task
+            <p>
+                click
+                <ion-icon name="add-circle">
+                </ion-icon>
+            </p>
+        </ion-item>
+        <ion-item-sliding *ngFor="let t of tasks">
+            <ion-item>
+                <ion-toggle></ion-toggle>
+                <ion-label>
+                    <h2 ngClass="t.status">{{t.task}}</h2>
+                    <p ngClass="t.priority">{{t.priority}}</p>
+                </ion-label>
+            </ion-item>
+            <ion-item-options>
+                <button color="primary">
+                    <ion-icon name="clipBoard"></ion-icon>Edit</button>
+                <button color="danger">
+                    <ion-icon name="trash"></ion-icon>Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
